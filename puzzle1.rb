@@ -5,7 +5,6 @@ class Rfid
 	@@r = MFRC522.new
 	def read_uid
 		aux = 1;
-		puts "Apropi la tarjeta al lector"
 		$stdout.flush
 		while(aux==1) 
 			begin
@@ -26,7 +25,8 @@ class Rfid
 end
 
 if __FILE__ == $0
-	rfid = Rfid.new()					
+	rfid = Rfid.new()
+	puts "Apropi la tarjeta al lector"
 	id = rfid.read_uid
 	puts id
 end

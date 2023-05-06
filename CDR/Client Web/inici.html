@@ -1,0 +1,53 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <meta name="description" content="Welcome to your personal page" />
+    <title>Course Manager</title>
+    <link rel="stylesheet" href="estil.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <script src="search.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+</head>
+
+<body>
+    <img src="logo.png" class="center">
+    <h2>Welcome
+        <span style="color: rgb(255, 21, 21)" >
+            <script>
+                document.write(localStorage.getItem("nombre"));
+            </script>
+        </span>
+    </h2>
+
+    <form action="/action_page.php" method="post">
+        <div class="container">
+            <div class="search">
+                <input type="text" id="myquery" placeholder="Enter query..." name="search">
+                <button onclick="tables()"><i class="fa fa-search"></i></button>
+            </div>
+            <br></br>
+            <div class="buttonlogout" onclick="window.location.href='login.html'">Logout</div>
+        </div>
+    </form>
+    <script>
+        function tables() {
+            var query = document.getElementById("myquery").value;
+            var informacio =query.split("?");
+            switch(informacio[0]){
+                case 'timetables':
+                    window.open("timetables.html");
+                break
+                case 'tasks':
+                    window.open("tasks.html");
+                break
+                case 'marks':
+                    window.open("marks.html");
+                break
+            }
+        }
+    </script>
+</body>

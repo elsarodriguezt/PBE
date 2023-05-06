@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <meta name="description" content="Timetables" />
+    <title>Course Manager</title>
+    <link rel="stylesheet" href="estil.css" />
+</head>
+
+<body>
+    <img src="logo.png" class="center">
+    <h2>Welcome
+        <span style="color: rgb(255, 21, 21)">
+            <script>
+                document.write(localStorage.getItem("nombre"));
+            </script>
+        </span>
+    </h2>
+    <form action="/action_page.php" method="post">
+        <div class="container">
+            <div class="buttonback" value="Back" id="submit" onclick="window.location.href='inici2.html'">Back</div>
+            <div class="buttonlogout" value="Logout" id="submit" onclick="window.location.href='login.html'">Logout
+            </div>
+            <h3 style="text-align:center;">Tasks</h3>
+
+            <!--Dibuixem la taula Tasks-->
+            <script>
+                var request = new XMLHttpRequest();
+                request.open("GET", "http://localhost:3000/timetables", true);
+                request.send()
+                var response = request.responseXML;
+                var x = JSON.parse(this.response);
+                <table>
+                    <tr>
+                        <th>Date</th>
+                        <th>Subject</th>
+                        <th>Name</th>
+                    </tr>
+                    for (var i=0; i<x.length; i++) {
+                        <tr>
+                            <td>table += x[i].getElementsById("date")[0].childNodes[0].nodeValue;
+                                table += "
+                            </td>
+                            <td>
+                                table += x[i].getElementsById("subject")[0].childNodes[0].nodeValue;
+                                table += "
+                            </td>
+                            <td>
+                                table += x[i].getElementsById("name")[0].childNodes[0].nodeValue;
+                                table += "
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </script>
+        </div>
+    </form>
+</body>
+
+</html>

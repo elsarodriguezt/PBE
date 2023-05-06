@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Log in with your university card" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <title>Course Manager</title>
+    <link rel="stylesheet" href="estil.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script src="conectar.js"></script>
+</head>
+
+<body>
+    <img src="logo.png" class="center">
+    <h2>Welcome to StuNET</h2>
+
+    <form action="/action_page.php" method="post">
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</body>
+
+</html>
